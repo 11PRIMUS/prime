@@ -5,8 +5,8 @@ import { JetBrains_Mono } from 'next/font/google'
 const mono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Alok | Terminal Portfolio',
-  description: 'Machine Learning and AI developer portfolio',
+  title: 'Alok ',
+  description: 'Portfolio',
 }
 
 export default function RootLayout({
