@@ -88,7 +88,7 @@ export default function Page() {
                 hi, i am <span className="underline">ALOK</span>!
               </h1>
               <p className="text-cyan-100">i am a second year student, studying computer science.</p>
-              <p className="text-cyan-200">mainly work in <span className="text-green-300">machine learning</span> and <span className="text-purple-300">AI Agents + LLM's</span> too (more and more gpu's):(</p>
+              <p className="text-cyan-200">mainly work in <span className="text-green-300">machine learning</span> and <span className="text-purple-300">AI Agents + LLM&apos;s</span> too (more and more gpu&apos;s)😕</p>
             </div>
           </section>
 
@@ -151,7 +151,7 @@ export default function Page() {
                       >
                         SAR image Colorization
                       </a>
-                      <p className="text-zinc-300">uses custom GAN's and GDAL to color the grayscale SAR image with reduced speckle noise and image distortion</p>
+                      <p className="text-zinc-300">uses custom GAN&apos;s and GDAL to color the grayscale SAR image with reduced speckle noise and image distortion</p>
                     </div>
                   </div>
                 </li>
@@ -255,7 +255,7 @@ export default function Page() {
                 
                 {sentStatus === "success" && (
                   <div className="bg-green-900/50 border border-green-500 text-green-200 px-4 py-2 rounded animate-fadeIn">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </div>
                 )}
                 
