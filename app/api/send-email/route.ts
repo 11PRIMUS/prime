@@ -39,8 +39,8 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true, response: data });
-  } catch (error) {
-    console.error("Error in send-telegram route:", error);
+  } catch (err) {
+    console.error("Error in send-telegram route:", err);
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
   }
 }
