@@ -1,59 +1,39 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    const { name, email, message } = await request.json();
-    
-    // Basic validation
+    const { name, email, message } = await req.json();
+
     if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: 'Name, email and message are required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Name, Email, and Message are required" }, { status: 400 });
     }
-    
-    // Configure your email provider here
-    const transporter = nodemailer.createTransport({
-      service: 'gmail', // or another provider
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-    
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'alok28pa@gmail.com', // Your receiving email
-      subject: `New message from ${name} via Portfolio`,
-      text: `
-Name: ${name}
-Email: ${email}
-Message:
-${message}
-      `,
-      html: `
-<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-  <h2>New Portfolio Message</h2>
-  <p><strong>From:</strong> ${name}</p>
-  <p><strong>Email:</strong> ${email}</p>
-  <h3>Message:</h3>
-  <p style="white-space: pre-line;">${message}</p>
-</div>
-      `,
-    };
-    
-    await transporter.sendMail(mailOptions);
-    
-    return NextResponse.json(
-      { success: true, message: 'Email sent successfully' },
-      { status: 200 }
+
+    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+      return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
+    }
+
+    const textMessage = `📝 *New Message Received*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💬 *Message:* ${message}`;
+
+    const response = await fetch(
+      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: textMessage,
+          parse_mode: "Markdown",
+        }),
+      }
     );
+
+    const data = await response.json();
+
+    return NextResponse.json({ success: true, response: data });
   } catch (error) {
-    console.error('Email sending error:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
   }
 }
