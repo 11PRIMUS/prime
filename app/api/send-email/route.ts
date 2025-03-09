@@ -12,6 +12,7 @@ export async function POST(req: Request) {
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+      console.error("Missing Telegram API credentials.");
       return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
     }
 
@@ -32,8 +33,14 @@ export async function POST(req: Request) {
 
     const data = await response.json();
 
+    if (!response.ok) {
+      console.error("Telegram API Error:", data);
+      return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
+    }
+
     return NextResponse.json({ success: true, response: data });
   } catch (error) {
+    console.error("Error in send-telegram route:", error);
     return NextResponse.json({ error: "Failed to send message" }, { status: 500 });
   }
 }
