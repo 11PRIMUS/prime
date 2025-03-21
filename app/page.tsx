@@ -87,7 +87,7 @@ export default function Page() {
               <h1 className="text-yellow-300 text-xl">
                 hi, i am <span className="underline">ALOK</span>!
               </h1>
-              <p className="text-cyan-100">i am a second year student, studying computer science.</p>
+              <p className="text-cyan-100">a second year undergrad, studying computer science.</p>
               <p className="text-cyan-200">mainly work in <span className="text-green-300">machine learning</span> and <span className="text-purple-300">AI Agents + LLM&apos;s</span> too (more and more gpu&apos;s)😕</p>
             </div>
           </section>
@@ -135,7 +135,7 @@ export default function Page() {
                       >
                         BrightWalk
                       </a>
-                      <p className="text-zinc-300">Visual assistant for visually imapired person, It describes what it sees using SkunkworksAI BakLLaVA-1 model via llama.cpp and narrates the text using Web Speech API.</p>
+                      <p className="text-zinc-300">Visual assistant for visually impaired person, It describes what it sees using SkunkworksAI BakLLaVA-1 model via llama.cpp and narrates the text using Web Speech API.</p>
                     </div>
                   </div>
                 </li>
@@ -183,7 +183,7 @@ export default function Page() {
                       >
                         AI-Code
                       </a>
-                      <p className="text-zinc-300">an open-source project designed to help individuals learn and understand foundational code implementations of various AI algorithms</p>
+                      <p className="text-zinc-300">an open-source project designed to help individuals learn and understand fundamental code implementations of various AI algorithms</p>
                     </div>
                   </div>
                 </li>
