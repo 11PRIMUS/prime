@@ -12,7 +12,7 @@ export default function Page() {
   const [typedText, setTypedText] = useState("")
   const fullText = "whoami | experience.txt | projects.ls | contact_me.sh"
 
-  // Typing animation effect
+
   useEffect(() => {
     if (typedText.length < fullText.length) {
       const timeout = setTimeout(() => {
@@ -56,7 +56,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-black text-green-400 font-mono">
-      {/* Terminal window header */}
+      {/*terminal window */}
       <div className="bg-zinc-900 border-b border-zinc-700 p-2 flex items-center gap-2">
         <div className="flex gap-1.5">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -68,7 +68,7 @@ export default function Page() {
 
       <main className="p-4 md:p-8 max-w-2xl mx-auto">
         <div className="space-y-6">
-          {/* Command input animation */}
+          {/*command log*/}
           <div className="bg-zinc-900/50 p-4 rounded-md border border-zinc-800">
             <div className="flex items-center gap-2 text-purple-400">
               <span className="text-pink-500">$</span>
@@ -77,7 +77,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Welcome section */}
+          {/*hello sec*/}
           <section className="space-y-2 bg-zinc-900/30 p-4 rounded-md border border-cyan-900/50">
             <div className="flex items-center gap-2">
               <span className="text-cyan-500">$</span>
@@ -92,7 +92,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Experience section */}
+          {/*exp*/}
           <section className="space-y-2 bg-zinc-900/30 p-4 rounded-md border border-green-900/50">
             <div className="flex items-center gap-2">
               <span className="text-green-600">$</span>
@@ -114,7 +114,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Projects section */}
+          {/*projects*/}
           <section className="space-y-2 bg-zinc-900/30 p-4 rounded-md border border-purple-900/50">
             <div className="flex items-center gap-2">
               <span className="text-purple-600">$</span>
@@ -191,7 +191,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Contact form section */}
+          {/*contact */}
           <section className="space-y-2 bg-zinc-900/30 p-4 rounded-md border border-green-900/50">
             <div className="flex items-center gap-2">
               <span className="text-green-500">$</span>
@@ -210,7 +210,7 @@ export default function Page() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    placeholder="John Doe"
+                    placeholder="Alokk"
                     className="w-full bg-zinc-800 border border-green-800 text-green-100 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -224,7 +224,7 @@ export default function Page() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    placeholder="john@example.com"
+                    placeholder="alok@example.com"
                     className="w-full bg-zinc-800 border border-green-800 text-green-100 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
@@ -268,7 +268,7 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Footer with social links */}
+          {/*social links */}
           <footer className="pt-8 border-t border-zinc-800">
             <div className="flex justify-center space-x-6">
               <a
@@ -299,7 +299,7 @@ export default function Page() {
                 <Mail size={24} />
               </a>
             </div>
-            <p className="text-center text-zinc-500 mt-4 text-sm">© {new Date().getFullYear()} Alok • Built with Next.js</p>
+            <p className="text-center text-zinc-500 mt-4 text-sm">© {new Date().getFullYear()} Alok -_-</p>
           </footer>
 
           {/* Command prompt */}
