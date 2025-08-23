@@ -135,7 +135,7 @@ export default function Page() {
                       >
                         MEERA - AI Companion
                       </a>
-                      <p className="text-zinc-300">Meera isn't just another chatbot. She's an emotional companion made to truly listen and remembe</p>
+                      <p className="text-zinc-300">Meera isn&apos;t just another chatbot. She&apos;s an emotional companion made to truly listen and remembe</p>
                     </div>
                   </div>
                 </li>
