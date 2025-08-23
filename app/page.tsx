@@ -87,7 +87,7 @@ export default function Page() {
               <h1 className="text-yellow-300 text-xl">
                 hi, i am <span className="underline">ALOK</span>!
               </h1>
-              <p className="text-cyan-100">a second year undergrad, studying computer science.</p>
+              <p className="text-cyan-100">pre final year undergrad, studying computer science.</p>
               <p className="text-cyan-200">mainly work in <span className="text-green-300">machine learning</span> and <span className="text-purple-300">AI Agents + LLM&apos;s</span> too (more and more gpu&apos;s)😕</p>
             </div>
           </section>
@@ -123,6 +123,22 @@ export default function Page() {
             <div className="pl-5 space-y-1">
               <h2 className="text-purple-300 text-lg">projects</h2>
               <ul className="space-y-3">
+                <li className="group">
+                  <div className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">{">"}</span>
+                    <div>
+                      <a
+                        href="https://github.com/11PRIMUS/meera_1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-fuchsia-300 hover:text-fuchsia-200 transition-colors"
+                      >
+                        MEERA - AI Companion
+                      </a>
+                      <p className="text-zinc-300">Meera isn't just another chatbot. She's an emotional companion made to truly listen and remembe</p>
+                    </div>
+                  </div>
+                </li>
                 <li className="group">
                   <div className="flex items-start gap-2">
                     <span className="text-purple-600 mt-1">{">"}</span>
